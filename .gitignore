@@ -1,0 +1,19 @@
+# Build output
+build/
+*.o
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+Makefile
+InvestmentTrackingApp
+TradingApp
+
+# Qt Creator / IDE state
+*.pro.user
+*.pro.user.*
+*.autosave
+CMakeLists.txt.user*
+
+# OS noise
+.DS_Store
