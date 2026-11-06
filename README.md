@@ -4,7 +4,7 @@ A small Qt Widgets desktop application for keeping track of investment and tradi
 positions by hand: what you bought, at what price, where your stop levels are, and
 what that implies for risk, reward and running balance.
 
-Written in 2023 as a personal tool and kept as-is.
+Written in 2021 as a personal tool and kept as-is.
 
 ## What it does
 
@@ -18,7 +18,7 @@ Written in 2023 as a personal tool and kept as-is.
 
 ## What it is not
 
-This is a user interface exercise, not a trading system. It contains no market data,
+This is a UI fun app, not a trading system. It contains no market data,
 no strategy, no signals and no order execution. It records positions that you type in
 yourself and does arithmetic on them. Any real analysis lives elsewhere.
 
@@ -34,22 +34,12 @@ qmake6 && make         # Qt 6
 
 Or open `InvestmentTrackingApp.pro` in Qt Creator.
 
-There is no CMake build; the project uses qmake only.
-
-## Layout
-
-| File | Purpose |
-|---|---|
-| `main.cpp` | entry point |
-| `mainwindow.{h,cpp,ui}` | main window, toolbar/menu actions, file open/save |
-| `maintable.{h,cpp}` | `QTableWidget` subclass, row widgets, recalculation |
+The project uses qmake only.
 
 ## Status
 
-Unmaintained. Built against Qt 5 in 2023 and not continuously tested against newer
-Qt releases. The UI uses fixed widget geometry rather than layouts, and old-style
-`SIGNAL`/`SLOT` connections; if this were revived, both would be the first things
-to change.
+Unmaintained. Built against Qt 5 in 2021 and not continuously tested against newer
+Qt releases.
 
 ## License
 
