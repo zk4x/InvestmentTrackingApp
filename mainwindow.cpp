@@ -11,45 +11,35 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLabel* l1 = new QLabel;
     l1->setText("Start bank:");
-    l1->setParent(this);
     l1->setAlignment(Qt::AlignRight);
-    l1->setGeometry(220, 4, 100, 15);
-    l1->show();
+    ui->fileToolBar->addWidget(l1);
 
     startBank = new QLineEdit;
-    startBank->setParent(this);
     startBank->setAlignment(Qt::AlignRight);
-    startBank->setGeometry(320, 3, 100, 18);
-    startBank->show();
+    startBank->setMaximumWidth(100);
+    ui->fileToolBar->addWidget(startBank);
 
     QComboBox* l3 = new QComboBox;
     l3->insertItems(0, currencies);
     l3->setCurrentText(mainTable->getCurrency());
-    l3->setParent(this);
-    l3->setGeometry(420, 3, 40, 18);
-    l3->show();
+    ui->fileToolBar->addWidget(l3);
 
     connect(l3, SIGNAL(currentIndexChanged(int)), this, SLOT(changeCurrency(int)));
 
     QLabel* l4 = new QLabel;
     l4->setText("Running bank:");
-    l4->setParent(this);
     l4->setAlignment(Qt::AlignRight);
-    l4->setGeometry(460, 4, 100, 15);
-    l4->show();
+    ui->fileToolBar->addWidget(l4);
 
     runningBank = new QLabel;
-    runningBank->setParent(this);
     runningBank->setAlignment(Qt::AlignRight);
-    runningBank->setGeometry(560, 4, 100, 15);
-    runningBank->show();
+    runningBank->setMaximumWidth(100);
+    ui->fileToolBar->addWidget(runningBank);
 
     l6 = new QLabel;
     l6->setText(mainTable->getCurrency());
-    l6->setParent(this);
     l6->setAlignment(Qt::AlignLeft);
-    l6->setGeometry(660, 4, 20, 15);
-    l6->show();
+    ui->fileToolBar->addWidget(l6);
 
     connect(ui->action_Row, SIGNAL(triggered()), this->mainTable, SLOT(addRow()));
     connect(ui->action_Row_2, SIGNAL(triggered()), this->mainTable, SLOT(removRow()));
@@ -70,8 +60,7 @@ MainWindow::MainWindow(QWidget *parent)
     button->setMinimumSize(5, 5);
     button->setIcon(QIcon("./icons/recalculateIcon.png"));
     button->setToolTip("Recalculate Ctrl+R, Enter");
-    button->setGeometry(680, 3, 18, 18);
-    button->show();
+    ui->fileToolBar->addWidget(button);
 
     connect(button, SIGNAL(clicked()), this, SLOT(recalculate()));
 

@@ -94,6 +94,8 @@ void MainTable::open(QTextStream &in)
                 i++;
             }
         }
+        if (i == 6)
+            rows.last()->stopLoss->setText(word);
     }
 }
 
@@ -179,7 +181,7 @@ QString MainTable::recalculate(const QString &startBank)
     for (short i : costs)
         setColumnWidth(i, 80);
     for (short i : others)
-        setColumnWidth(i, 70);
+        setColumnWidth(i, 100);
     setColumnWidth(16, 100);
     return rows.last()->afterBank->text();
 }
